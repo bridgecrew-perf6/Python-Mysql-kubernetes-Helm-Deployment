@@ -17,11 +17,12 @@ Helm folder contain two  helm packages
 
 In this section i will describe how to deploy each helm deployment in minikube kubernetes  cluster 
 
-Helm deployment packages will contain the <span style="color:blue">*secrets.yaml* </span> file which contains a set of sensitive data that was encrypted by PGP key .
+Helm deployment packages will contain the **secrets.yaml**  file which contains a set of sensitive data that was encrypted by PGP key .
+
+
 
 Also package contains .sops.yaml ,
 
-encrypted_suffix: "SECRET"     says that all  variables with SECRET suffix must be encrypted. 
+encrypted_suffix: "SECRET" says that all  variables with SECRET suffix must be encrypted. 
 
 
-<span style="color:red">some **This is Red Bold.** text</span>
