@@ -23,6 +23,6 @@ Helm deployment packages will contain the **secrets.yaml**  file which contains 
 
 Also package contains .sops.yaml ,
 
-encrypted_suffix: "SECRET" says that all  variables with SECRET suffix must be encrypted. 
+**encrypted_suffix: SECRET** says that all  variables with SECRET suffix must be encrypted. 
 
 
