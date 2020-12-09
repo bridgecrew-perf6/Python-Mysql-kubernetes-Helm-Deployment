@@ -20,7 +20,7 @@ In this section i will describe how to deploy each helm deployment in minikube k
 
 Helm deployment packages will contain the **secrets.yaml**  file which contains a set of sensitive data that was encrypted by PGP key .
 
-Also package contains **.sops.yaml **. Examins the .sops.yaml file
+Also package contains **.sops.yaml**. Examins that file file
 
 **encrypted_suffix: SECRET** says that all  variables with SECRET suffix must be encrypted. 
 
