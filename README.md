@@ -133,34 +133,35 @@ Then you will see the **Hello World**  output in the browser
 
 - Similar to **Option ONE steps** , Clone the git repository and run the below commands as shown in the picture
 
-```
-  Create  folder called  /tmp/mysqldata/   to store the mysql data in persistent volume  ( mkdir /tmp/mysqldata/ )
-  git clone  https://github.com/parakrama/hello-world-app
-  cd hello-world-app      #repository folder 
-  tar xvzf hello-world-ingress-2.0.0.tgz 
-  cd hello-world-ingress/
-  helm secrets dec secrets.yaml  #Decript  helm secret file 
-  cd ..
-  sudo helm install  application  hello-world-ingress -f hello-world-ingress/secrets.yaml.dec
+   ```
+   Create  folder called  /tmp/mysqldata/   to store the mysql data in persistent volume  ( mkdir /tmp/mysqldata/ )
+   git clone  https://github.com/parakrama/hello-world-app
+   cd hello-world-app      #repository folder 
+   tar xvzf hello-world-ingress-2.0.0.tgz 
+   cd hello-world-ingress/
+   helm secrets dec secrets.yaml  #Decript  helm secret file 
+   cd ..
+   sudo helm install  application  hello-world-ingress -f hello-world-ingress/secrets.yaml.dec
+   ```
 
-```
-
-  ![](https://github.com/parakrama/images/blob/master/mark6.png)
+   ![](https://github.com/parakrama/images/blob/master/mark6.png)
   
 <br></br>
+
 - Nginx ingress hostname defined as  **hello-world.com**   as below  , so make sure to add  **/etc/hosts**  entry to your machine as below
 
-  ![](https://github.com/parakrama/images/blob/master/mark7.png)
+   ![](https://github.com/parakrama/images/blob/master/mark7.png)
   
  
-  ```
-  /etc/hosts
-  127.0.0.1  hello-world.com 
-  ```
-  ![](https://github.com/parakrama/images/blob/master/mark8.png)
+    ```
+    /etc/hosts
+    127.0.0.1  hello-world.com 
+    ```
+     ![](https://github.com/parakrama/images/blob/master/mark8.png)
   
   <br></br>
   
  - Now you can access the http://hellow-world.com via the browser  
  
-    ![](https://github.com/parakrama/images/blob/master/mark9.png)
+  
+     ![](https://github.com/parakrama/images/blob/master/mark9.png)
