@@ -17,7 +17,7 @@ Helm folder contain two  helm packages
 
 ***In this document i will describe how to deploy each of the above helm deployment in minikube kubernetes  cluster . I encourage you to  test both the deployement metonds independently and   test its functionalities***  
 
-Helm deployment packages will contain the **secrets.yaml**  file which contains a set of sensitive data that was encrypted by PGP key .
+Helm deployment packages will contain the **secrets.yaml**  file which contains a set of sensitive data that was encrypted by PGP key by using Helm secret plugin.
 
 Also package contains **.sops.yaml**. examines that  file
 
