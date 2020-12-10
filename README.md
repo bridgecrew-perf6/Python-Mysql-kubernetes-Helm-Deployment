@@ -177,3 +177,22 @@ Then you will see the **Hello World**  output in the browser
  
   
      ![](https://github.com/parakrama/images/blob/master/mark9.png)
+     
+ 
+ 
+## Truobleshhting
+
+Incase you get below error when running  helm charts 
+
+```
+Internal error occurred: failed calling webhook"validate.nginx.ingress.kubernetes.io": Post https://ingress-nginx-controller-admission.ingress-nginx.svc:443/extensions/v1beta1/ingresses?timeout=30s: context deadline exceeded
+```
+
+Run the below command to fix it 
+
+```
+kubectl delete -A ValidatingWebhookConfiguration ingress-nginx-admission
+```
+
+Issue is described in github URL https://github.com/kubernetes/ingress-nginx/issues/5401
+
