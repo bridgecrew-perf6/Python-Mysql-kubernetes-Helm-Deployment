@@ -50,6 +50,102 @@ Image:
     sudo cp minikube-linux-amd64 /usr/local/bin/minikube
     sudo chmod 755 /usr/local/bin/minikube
 ```
+  2. Run the minikube as ROOT or Sudo
+
+This is a very critical setup of the process , minikube must RUN as **ROOT or SUDO**  in order to  work the persistent volume hostpath feature in minikube .Mysql     deployment is using the persistent volume feature to store its data and persistent volume uses the **hostPath:/mnt/mysqldata/** to store its data in running physical machine 
+
+  3. Install the helm secret plugin 
+  
+  - ```Sudo helm plugin install https://github.com/futuresimple/helm-secrets```
+  
+  This secret plugin is required to encrypt  and decrypt the helm  charts sensitive data such as user name and passwords 
+  
+  4. Running helm setup
+
+  - Once minikube is started create folder called **/tmp/mysqldata/**   this will be used to store the  mysql data directory using persistent volumes
+  
+  - Clone git repository
+  ``` 
+     git clone  https://github.com/parakrama/hello-world-app
+  ```
+  
+   - Then go to the clone ***hello-world-app folder*** and then ***public-key folder** . Then copy the pgp public key **secring.gpg**  to **/home/user/.gnupg/**   ( /home/user/**  is the  working user's home directory of a ubuntu machine )  This key will be used to decrypt secrets.yaml file
+  
+  ```
+     cd hello-world-app/public-key/
+     cp secring.gpg /home/user/.gnupg/
+  ```
+   Image:
+
+   ![](https://github.com/parakrama/images/blob/master/mark2.png)
+   
+   
+   - Go to helm folder inside the clone repository
+  
+   ```
+      cd helm
+   ```
+   
+   - Then extract the hello-world-2.0.0.tgz file
+   
+   ```
+     tar zxvf hello-world-2.0.0.tgz
+     cd hello-world 
+   ```
+   
+   - Decrypt the **secrets.yaml**  file in the hello-world folder . this will create the **secret.yaml.dec** file 
+   
+   ```
+     helm  secrets dec secrets.yaml 
+   ```
+    
+   ![](https://github.com/parakrama/images/blob/master/mark3.png)
+   
+
+   - Run the helm deployment 
+
+   ```
+     sudo helm install     --debug  app  hello-world -f hello-world/secrets.yaml.dec
+   ```
+   ![](https://github.com/parakrama/images/blob/master/mark4.png)
+   
+   
+   
+   
+Then you can access the setup using  **http://localhost:30036**  . This allows you to access the setup via **NodePort** service of the Minikube Cluster . 
+Then you will see the **Hello World**  output in the browser
+
+![](https://github.com/parakrama/images/blob/master/mark5.png)
+   
+   
+   
+   
 
 
+## Option TWO - Deployment Expose via Nginx Controller service 
+
+
+
+### Steps to run the deployment 
+
+- Similar to **Option ONE steps** , Clone the git repository and run the below commands as shown in the picture
+
+```
+  Create  folder called  /tmp/mysqldata/   to store the mysql data in persistent volume  ( mkdir /tmp/mysqldata/ )
+  git clone  https://github.com/parakrama/hello-world-app
+  cd hello-world-app      #repository folder 
+  tar xvzf hello-world-ingress-2.0.0.tgz 
+  cd hello-world-ingress/
+  helm secrets dec secrets.yaml  #Decript  helm secret file 
+  cd ..
+  sudo helm install  application  hello-world-ingress -f hello-world-ingress/secrets.yaml.dec
+
+```
+
+  ![](https://github.com/parakrama/images/blob/master/mark6.png)
+  
+<br></br>
+- Nginx ingress hostname defined as  **hello-world.com**   as below  , so make sure to add  **/etc/hosts**  entry to your machine as below
+
+  ![](https://github.com/parakrama/images/blob/master/mark7.png)
 
