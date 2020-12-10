@@ -15,7 +15,7 @@ Helm folder contain two  helm packages
 - Hello-world-ingress-2.0.0.tgz  : This package contains the deployment . which will expose the application via  Nginx ingress controller 
 
 
-***In this document i will describe how to deploy each helm deployment in minikube kubernetes  cluster . I encourage you to  test both the deployement metonds independently and   test its functionalities***  
+***In this document i will describe how to deploy each of the above helm deployment in minikube kubernetes  cluster . I encourage you to  test both the deployement metonds independently and   test its functionalities***  
 
 Helm deployment packages will contain the **secrets.yaml**  file which contains a set of sensitive data that was encrypted by PGP key .
 
@@ -37,7 +37,7 @@ Also package contains **.sops.yaml**. examines that  file
   - Kubernetes version 1.18
 
 
-## Option ONE - Deployment Expose via NodePort service
+## Option ONE - Deployment Expose via NodePort service (Hello-world-2.0.0.tgz )
 
 ### Steps to run the  deployment 
 
@@ -128,7 +128,7 @@ Then you will see the **Hello World**  output in the browser
    
 
 
-## Option TWO - Deployment Expose via Nginx Controller service 
+## Option TWO - Deployment Expose via Nginx Controller service (Hello-world-ingress-2.0.0.tgz)
 
 
 
