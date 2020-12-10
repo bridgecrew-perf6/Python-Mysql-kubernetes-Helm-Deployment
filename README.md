@@ -80,37 +80,37 @@ Image:
          cp secring.gpg /home/user/.gnupg/
          ```
 
-   ![](https://github.com/parakrama/images/blob/master/mark2.png)
+        ![](https://github.com/parakrama/images/blob/master/mark2.png)
    
    
-   - Go to helm folder inside the clone repository
-  
-   ```
+      - Go to helm folder inside the clone repository
+   
+      ```
       cd helm
-   ```
+      ```
    
-   - Then extract the hello-world-2.0.0.tgz file
+      - Then extract the hello-world-2.0.0.tgz file
    
-   ```
-     tar zxvf hello-world-2.0.0.tgz
-     cd hello-world 
-   ```
+      ```
+      tar zxvf hello-world-2.0.0.tgz
+      cd hello-world 
+      ```
    
-   - Decrypt the **secrets.yaml**  file in the hello-world folder . this will create the **secret.yaml.dec** file 
+      - Decrypt the **secrets.yaml**  file in the hello-world folder . this will create the **secret.yaml.dec** file 
    
-   ```
-     helm  secrets dec secrets.yaml 
-   ```
+      ```
+      helm  secrets dec secrets.yaml 
+      ```
     
-   ![](https://github.com/parakrama/images/blob/master/mark3.png)
+      ![](https://github.com/parakrama/images/blob/master/mark3.png)
    
 
-   - Run the helm deployment 
+      - Run the helm deployment 
 
-   ```
-     sudo helm install     --debug  app  hello-world -f hello-world/secrets.yaml.dec
-   ```
-   ![](https://github.com/parakrama/images/blob/master/mark4.png)
+      ```
+      sudo helm install     --debug  app  hello-world -f hello-world/secrets.yaml.dec
+      ```
+       ![](https://github.com/parakrama/images/blob/master/mark4.png)
    
    
    
