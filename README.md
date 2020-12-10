@@ -46,40 +46,39 @@ Image:
 
    1. Download and install the minikube 
 
- ```
-    Wget https://storage.googleapis.com/minikube/releases/v1.11.0/minikube-linux-amd64  
-    sudo cp minikube-linux-amd64 /usr/local/bin/minikube
-    sudo chmod 755 /usr/local/bin/minikube
-```
+      ```
+      Wget https://storage.googleapis.com/minikube/releases/v1.11.0/minikube-linux-amd64  
+      sudo cp minikube-linux-amd64 /usr/local/bin/minikube
+      sudo chmod 755 /usr/local/bin/minikube
+      ```
 
    2. Run the minikube as ROOT or Sudo
 
-   This is a very critical setup of the process , minikube must RUN as **ROOT or SUDO**  in order to  work the persistent volume hostpath feature in minikube     .  Mysql deployment is using the persistent volume feature to store its data and persistent volume uses the **hostPath:/mnt/mysqldata/** to store its data in        running physical machine 
+      This is a very critical setup of the process , minikube must RUN as **ROOT or SUDO**  in order to  work the persistent volume hostpath feature in minikube     .   Mysql deployment is using the persistent volume feature to store its data and persistent volume uses the **hostPath:/mnt/mysqldata/** to store its data in         running physical machine 
 
    3. Install the helm secret plugin 
   
- ```
-  Sudo helm plugin install https://github.com/futuresimple/helm-secrets
- ```
+      ```
+      Sudo helm plugin install https://github.com/futuresimple/helm-secrets
+      ```
    This secret plugin is required to encrypt  and decrypt the helm  charts sensitive data such as user name and passwords 
   
   
-  4. Running helm setup
+   4. Running helm setup
 
-  - Once minikube is started create folder called **/tmp/mysqldata/**   this will be used to store the  mysql data directory using persistent volumes
+       - Once minikube is started create folder called **/tmp/mysqldata/**   this will be used to store the  mysql data directory using persistent volumes
   
-  - Clone git repository
-  ``` 
-     git clone  https://github.com/parakrama/hello-world-app
-  ```
+       - Clone git repository
+         ``` 
+         git clone  https://github.com/parakrama/hello-world-app
+         ```
   
-   - Then go to the clone ***hello-world-app folder*** and then ***public-key folder** . Then copy the pgp public key **secring.gpg**  to **/home/user/.gnupg/**   ( /home/user/**  is the  working user's home directory of a ubuntu machine )  This key will be used to decrypt secrets.yaml file
+       - Then go to the clone ***hello-world-app folder*** and then ***public-key folder** . Then copy the pgp public key **secring.gpg**  to **/home/user/.gnupg/**   ( /home/user/**  is the  working user's home directory of a ubuntu machine )  This key will be used to decrypt secrets.yaml file
   
-  ```
-     cd hello-world-app/public-key/
-     cp secring.gpg /home/user/.gnupg/
-  ```
-   Image:
+         ```
+         cd hello-world-app/public-key/
+         cp secring.gpg /home/user/.gnupg/
+         ```
 
    ![](https://github.com/parakrama/images/blob/master/mark2.png)
    
