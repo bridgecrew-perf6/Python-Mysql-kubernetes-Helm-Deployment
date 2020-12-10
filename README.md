@@ -134,8 +134,9 @@ Then you will see the **Hello World**  output in the browser
 
    ```
    Create  folder called  /tmp/mysqldata/   to store the mysql data in persistent volume  ( mkdir /tmp/mysqldata/ )
-   git clone  https://github.com/parakrama/hello-world-app
+   git clone https://github.com/parakrama/hello-world-app
    cd hello-world-app      #repository folder 
+   cd helm
    tar xvzf hello-world-ingress-2.0.0.tgz 
    cd hello-world-ingress/
    helm secrets dec secrets.yaml  #Decript  helm secret file 
