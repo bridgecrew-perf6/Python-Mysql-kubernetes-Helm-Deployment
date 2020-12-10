@@ -179,7 +179,8 @@ Then you will see the **Hello World**  output in the browser
      ![](https://github.com/parakrama/images/blob/master/mark9.png)
      
  
- 
+<br></br>
+<br></br>
 ## Truobleshhting
 
 Incase you get below error when running  helm charts 
