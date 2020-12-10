@@ -57,7 +57,7 @@ Also package contains **.sops.yaml**. examines that  file
       sudo minikube start --vm-driver=none
       ```
       
-      This is a very critical setup of the process , minikube must RUN as **ROOT or SUDO**  in order to  work the persistent volume hostpath feature in minikube     .   Mysql deployment is using the persistent volume feature to store its data and persistent volume uses the **hostPath:/tmp/mysqldata/** to store its data in         running physical machine 
+      This is a very critical setup of the process , minikube must RUN as **ROOT or SUDO**  in order to  work the persistent volume hostpath feature in minikube     .   Mysql deployment is using the persistent volume feature to store its data.  Persistent volume uses the **hostPath:/tmp/mysqldata/** to store its data in           running physical machine 
 
    3. Install the helm secret plugin 
   
