@@ -23,7 +23,6 @@ Also package contains **.sops.yaml**. examines that  file
 
 **encrypted_suffix: SECRET** says that all  variables with SECRET suffix must be encrypted. 
 
-Image:
 
 ![](https://github.com/parakrama/images/blob/master/mark1.jpg)
 
