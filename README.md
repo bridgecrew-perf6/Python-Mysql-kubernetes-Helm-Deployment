@@ -134,6 +134,12 @@ Then you will see the **Hello World**  output in the browser
 
 ### Steps to run the deployment 
 
+- First you must enable the ingress feature in minikube 
+
+  ```
+  minikube addons enable ingress
+  ```
+
 - Similar to **Option ONE steps** , Clone the git repository and run the below commands as shown in the picture
 
    ```
