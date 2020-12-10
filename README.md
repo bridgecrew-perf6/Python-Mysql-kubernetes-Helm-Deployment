@@ -14,6 +14,14 @@ Helm folder contain two  helm packages
 
 - Hello-world-ingress-2.0.0.tgz  : This package contains the deployment . which will expose the application via  Nginx ingress controller 
 
+Primarly deployment will contain  two Docker instances or Pods
+
+
+| Docker instace / Pod  	| Description                                                                                        	| Docker File               	| Docker HUB                  	|
+|-----------------------	|----------------------------------------------------------------------------------------------------	|---------------------------	|-----------------------------	|
+| Frontend Application  	| This is simple Flask App that reads  that data from Mysql Database and print output in the browser 	| dockerfiles/frontendapp/  	| parakrama1282/frontend:v2.1 	|
+| Mysql Database        	| This is Mysql DB of the application                                                                	| dockerfiles/mysqldb/      	| parakrama1282/mysql5.6:v3.0 	|
+
 
 ***In this document i will describe how to deploy each of the above helm deployment in minikube kubernetes  cluster . I encourage you to  test both the deployement metonds independently and   test its functionalities***  
 
