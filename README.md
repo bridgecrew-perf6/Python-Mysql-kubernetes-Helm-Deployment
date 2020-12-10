@@ -31,15 +31,16 @@ Also package contains **.sops.yaml**. examines that  file
 
 # Testing environment
 
-- Use ubuntu 18.04 
-- Minikube 1.11 Version  https://storage.googleapis.com/minikube/releases/v1.11.0/minikube-linux-amd64
-- I’m using minikube 1.11 version because newer version  of minikube didn’t  work well with **None drive**  and **nginx controller** 
-- Kubernetes version 1.18
+  - Use ubuntu 18.04 
+  - Minikube 1.11 Version  https://storage.googleapis.com/minikube/releases/v1.11.0/minikube-linux-amd64
+  - I’m using minikube 1.11 version because newer version  of minikube didn’t  work well with **None drive**  and **nginx controller** 
+  - Kubernetes version 1.18
 
 
 ## Option ONE - Deployment Expose via NodePort service
 
 ### Steps to run the  deployment 
+
 <br></br>
 
    1. Download and install the minikube 
@@ -59,19 +60,19 @@ Also package contains **.sops.yaml**. examines that  file
       ```
       Sudo helm plugin install https://github.com/futuresimple/helm-secrets
       ```
-   This secret plugin is required to encrypt  and decrypt the helm  charts sensitive data such as user name and passwords 
+      This secret plugin is required to encrypt  and decrypt the helm  charts sensitive data such as user name and passwords 
   
   
    4. Running helm setup
 
-       - Once minikube is started create folder called **/tmp/mysqldata/**   this will be used to store the  mysql data directory using persistent volumes
+      - Once minikube is started create folder called **/tmp/mysqldata/**   this will be used to store the  mysql data directory using persistent volumes
   
-       - Clone git repository
+      - Clone git repository
          ``` 
          git clone  https://github.com/parakrama/hello-world-app
          ```
   
-       - Then go to the clone ***hello-world-app folder*** and then ***public-key folder** . Then copy the pgp public key **secring.gpg**  to **/home/user/.gnupg/**   ( /home/user/**  is the  working user's home directory of a ubuntu machine )  This key will be used to decrypt secrets.yaml file
+      - Then go to the clone ***hello-world-app folder*** and then ***public-key folder** . Then copy the pgp public key **secring.gpg**  to **/home/user/.gnupg/**   ( /home/user/**  is the  working user's home directory of a ubuntu machine )  This key will be used to decrypt secrets.yaml file
   
          ```
          cd hello-world-app/public-key/
@@ -83,32 +84,32 @@ Also package contains **.sops.yaml**. examines that  file
    
       - Go to helm folder inside the clone repository
    
-      ```
-      cd helm
-      ```
+         ```
+         cd helm
+         ```
    
       - Then extract the hello-world-2.0.0.tgz file
    
-      ```
-      tar zxvf hello-world-2.0.0.tgz
-      cd hello-world 
-      ```
+         ```
+         tar zxvf hello-world-2.0.0.tgz
+         cd hello-world 
+         ```
    
       - Decrypt the **secrets.yaml**  file in the hello-world folder . this will create the **secret.yaml.dec** file 
    
-      ```
-      helm  secrets dec secrets.yaml 
-      ```
+         ```
+         helm  secrets dec secrets.yaml 
+         ```
     
-      ![](https://github.com/parakrama/images/blob/master/mark3.png)
+         ![](https://github.com/parakrama/images/blob/master/mark3.png)
    
 
       - Run the helm deployment 
 
-      ```
-      sudo helm install     --debug  app  hello-world -f hello-world/secrets.yaml.dec
-      ```
-       ![](https://github.com/parakrama/images/blob/master/mark4.png)
+         ```
+         sudo helm install     --debug  app  hello-world -f hello-world/secrets.yaml.dec
+         ```
+         ![](https://github.com/parakrama/images/blob/master/mark4.png)
    
    
    
@@ -146,6 +147,7 @@ Then you will see the **Hello World**  output in the browser
   
 <br></br>
 
+
 - Nginx ingress hostname defined as  **hello-world.com**   as below  , so make sure to add  **/etc/hosts**  entry to your machine as below
 
    ![](https://github.com/parakrama/images/blob/master/mark7.png)
@@ -156,8 +158,9 @@ Then you will see the **Hello World**  output in the browser
     127.0.0.1  hello-world.com 
     ```
      ![](https://github.com/parakrama/images/blob/master/mark8.png)
-  
+     
   <br></br>
+  
   
  - Now you can access the http://hellow-world.com via the browser  
  
