@@ -154,4 +154,11 @@ Then you will see the **Hello World**  output in the browser
   /etc/hosts
   127.0.0.1  hello-world.com 
   ```
+  ![](https://github.com/parakrama/images/blob/master/mark8.png)
+  
+  <br></br>
+  
+ - Now you can access the http://hellow-world.com via the browser  
+ 
+  ![](https://github.com/parakrama/images/blob/master/mark8.png)
 
