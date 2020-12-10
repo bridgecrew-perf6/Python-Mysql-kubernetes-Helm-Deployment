@@ -1,4 +1,4 @@
-# Overview 
+# Overview
 
 Please refer the Git hub repository https://github.com/parakrama/hello-world-app   Where you can find below details in the Folders
 
@@ -27,5 +27,20 @@ Also package contains **.sops.yaml**. Examins that file file
 Image:
 
 ![](https://github.com/parakrama/images/blob/master/mark1.jpg)
+
+
+
+
+# Testing environment
+
+- Use ubuntu 18.04 
+- Minikube 1.11 Version  https://storage.googleapis.com/minikube/releases/v1.11.0/minikube-linux-amd64
+- I’m using minikube 1.11 version because newer version  of minikube didn’t  work well with **None drive**  and **nginx controller** 
+- Kubernetes version 1.18
+
+
+## Option ONE - Deployment Expose via NodePort service
+
+### Steps to run the  deployment 
 
 
