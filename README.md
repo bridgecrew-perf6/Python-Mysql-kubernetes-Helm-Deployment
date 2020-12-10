@@ -15,8 +15,7 @@ Helm folder contain two  helm packages
 - Hello-world-ingress-2.0.0.tgz  : This package contains the deployment . which will expose the application via  Nginx ingress controller 
 
 
-In this section i will describe how to deploy each helm deployment in minikube kubernetes  cluster 
-
+In this document i will describe how to deploy each helm deployment in minikube kubernetes  cluster 
 
 Helm deployment packages will contain the **secrets.yaml**  file which contains a set of sensitive data that was encrypted by PGP key .
 
