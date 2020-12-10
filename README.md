@@ -148,4 +148,10 @@ Then you will see the **Hello World**  output in the browser
 - Nginx ingress hostname defined as  **hello-world.com**   as below  , so make sure to add  **/etc/hosts**  entry to your machine as below
 
   ![](https://github.com/parakrama/images/blob/master/mark7.png)
+  
+ 
+  ```
+  /etc/hosts
+  127.0.0.1  hello-world.com 
+  ```
 
