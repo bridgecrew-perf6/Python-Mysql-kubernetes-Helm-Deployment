@@ -134,6 +134,11 @@ Then you will see the **Hello World**  output in the browser
 
 ### Steps to run the deployment 
 
+- if you still have previous helm deployment running , Lets remove it 
+  ```
+  sudo helm uninstall app
+  ```
+
 - First you must enable the ingress feature in minikube 
 
   ```
